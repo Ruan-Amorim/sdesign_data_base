@@ -1,0 +1,49 @@
+
+// Config Gerais
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+// HOME
+.containers {
+    background: whitesmoke;
+    overflow: hidden;
+}
+#dashboard > div {
+    display: flex;
+    widht: 100%;
+    height: 50%;
+    flex: grid;
+    background: witesmoke;
+    text-align: center;
+}
+.blockDashboard {
+    width: 35%;
+    height: 20%;
+    margin: 5%;
+    padding: 10%;
+    color: whitesmoke;
+}
+.blockDashboard > h2 {
+    text-trasform: uppercase;
+}
+#blockDashboard01 {
+    background: purple;
+}
+#blockDashboard02 {
+    background: green;
+}
+#blockDashboard03 {
+    background: red;
+}
+#blockDashboard04 {
+    background: yellow;
+}
