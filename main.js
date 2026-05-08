@@ -1,9 +1,11 @@
 
 const API_TOKEN = "dawZ2bQ1wSy5WGKEQe1BCUYTYn6IYFty";
-const TABLE_ID = "1873778";
+const TABLE_ID = "955687";
 
 const URL =
   `https://api.baserow.io/api/database/rows/table/${TABLE_ID}/?user_field_names=true`;
+
+
 
 async function carregarDados() {
 
@@ -18,9 +20,62 @@ async function carregarDados() {
   const lista = document.getElementById("lista");
 
   lista.innerHTML = "";
-
+  
+  updateDashboard(dados);
+  console.log(dados)
   dados.results.forEach(item => {
-    window.alert(item.Name);
+
+    lista.innerHTML += `
+      <div class="card">
+        <h3>${item.Name}</h3>
+        <p>Status: ${item.Quantidade}</p>
+      </div>
+    `;
   });
 }
+
+const updateDashboard = (dados) => {
+    var EmEstoque = 0;
+    var BaixoEstoque = 0;
+    var SemEstoque = 0;
+    const block01 = document.getElementById("blockDashboard01");
+    const block02 = document.getElementById("blockDashboard02");
+    const block03 = document.getElementById("blockDashboard03");
+    const block04 = document.getElementById("blockDashboard04");
+
+    block01.innerHTML = `
+        <h2>Itens Cadastrados</h2><br> ${dados.results.length}
+    `;
+    for (let x = 0; x < dados.results.length; x++) {
+        if (dados.results[x]["Status Automático"] === "🟢 Em Estoque") {
+            EmEstoque ++;
+        } else {
+            
+        }        
+    }
+    block02.innerHTML = `
+        <h2>Em Estoque</h2><br> ${EmEstoque}
+    `;
+    for (let x = 0; x < dados.results.length; x++) {
+        if (dados.results[x]["Status Automático"] === "🟠 Baixo Estoque") {
+            BaixoEstoque ++;
+        } else {
+            
+        }        
+    }
+    block04.innerHTML = `
+        <h2>Em Estoque</h2><br> ${BaixoEstoque}
+    `;
+    for (let x = 0; x < dados.results.length; x++) {
+        if (dados.results[x]["Status Automático"] === "🔴 Sem Estoque") {
+            SemEstoque ++;
+        } else {
+            
+        }        
+    }
+    block03.innerHTML = `
+        <h2>Em Estoque</h2><br> ${SemEstoque}
+    `;
+}
+
 carregarDados();

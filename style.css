@@ -27,10 +27,11 @@ html, body {
 }
 .blockDashboard {
     width: 25%;
-    height: 20%;
-    margin: 5%;
+    height: 5%;
+    margin: 2%;
     padding: 10%;
     color: whitesmoke;
+    border-radius: 20px;
 }
 .blockDashboard > h2 {
     text-trasform: uppercase;
@@ -46,4 +47,10 @@ html, body {
 }
 #blockDashboard04 {
     background: yellow;
+}
+.card {
+    background: #b3adad5b; 
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
 }
