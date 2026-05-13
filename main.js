@@ -79,3 +79,41 @@ const updateDashboard = (dados) => {
 }
 
 carregarDados();
+
+const openDashboard = (idDashBoard) => {
+    switch (idDashBoard) {
+        case "Itens Cadastrados":
+            
+            break;
+        case "Em Estoque":
+
+            break;
+        case "Sem Estoque":
+
+            break;
+        case "Baixo Estoque":
+
+            break;
+        default:
+            break;
+    }
+}
+
+const getListaDashboard = () => {
+    const lista_status = document.getElementById("lista_dashboard");
+    const data_list = dados.results;
+
+    for (let x = 0; x < data_list.length; x++) {
+        if (data_list[x]["Status Automático"] == "🟢 Em Estoque") {
+        lista_status.innerHTML += `
+      <div class="card">
+        <h3>${data_list[x].Name}</h3>
+        <p>Status: ${data_list[x].Quantidade}</p>
+      </div>
+    `;
+    }
+        
+    }
+}
+
+getListaDashboard();
