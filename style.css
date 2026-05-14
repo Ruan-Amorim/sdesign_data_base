@@ -11,7 +11,9 @@ html, body {
     overflow-x: hidden;
     text-align: center;
 }
-
+body {
+    position: relative;
+}
 // HOME
 .containers {
     background: whitesmoke;
@@ -53,4 +55,47 @@ html, body {
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
+}
+
+
+/* OVERLAY */
+#lista_dashboard {
+    position: fixed; /* cobre a tela toda */
+    
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0,0,0,0.9);
+
+    z-index: 9999; /* fica acima de tudo */
+
+    overflow-y: auto;
+
+    padding: 20px;
+
+    display: none; /* começa escondido */
+}
+
+#SairDashBoard {
+    
+    position: fixed; /* cobre a tela toda */
+    
+    top: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    color: whitesmoke;
+
+    z-index: 11111; /* fica acima de tudo */
+
+    overflow-y: auto;
+
+    padding: 20px;
+
+    display: none; /* começa escondido */
 }

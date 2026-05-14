@@ -13,12 +13,12 @@
     <section id="home_data_base" class="containers">
         <section id="dashboard">
             <div>
-                <div id="blockDashboard01" class="blockDashboard"><h2>Itens Cadastrados</h2></div>
-                <div onclick="getListaDashboard('🟢 Em Estoque')" id="blockDashboard02" class="blockDashboard"><h2>Em Estoque</h2></div>
+                <div onclick="openDashboard()" id="blockDashboard01" class="blockDashboard"><h2>Itens Cadastrados</h2></div>
+                <div onclick="openDashboard('🟢 Em Estoque')" id="blockDashboard02" class="blockDashboard"><h2>Em Estoque</h2></div>
             </div>
             <div>
-                <div id="blockDashboard03" class="blockDashboard"><h2>Sem Estoque</h2></div>
-                <div id="blockDashboard04" class="blockDashboard"><h2>Baixo Estoque</h2></div>
+                <div onclick="openDashboard('🔴 Sem Estoque')" id="blockDashboard03" class="blockDashboard"><h2>Sem Estoque</h2></div>
+                <div onclick="openDashboard('🟠 Baixo Estoque')" id="blockDashboard04" class="blockDashboard"><h2>Baixo Estoque</h2></div>
             </div>
             
         </section>
@@ -27,8 +27,9 @@
 
     </section>
     <section id="lista_dashboard">
-
     </section>
+    
+    <div id="SairDashBoard" onclick="sairDashBoard()">X</div>
     <script src="main.js"></script>
 </body>
-</html>>
+</html>
